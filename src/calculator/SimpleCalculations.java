@@ -43,7 +43,7 @@ public class SimpleCalculations {
         System.out.println("Please enter the first subtracting number >>> ");
         while(!input.hasNextDouble()){
             input.nextLine();
-            System.out.println("This is an invalid input, please enter the the first number >>>");
+            System.out.println("This is an invalid input, please enter the first subtracting number >>>");
             }
         answer = input.nextDouble();
         System.out.println("Please enter the subtracted number >>>");
@@ -53,6 +53,7 @@ public class SimpleCalculations {
             }
         double number = input.nextDouble();
         answer -= number;
+        System.out.println(answer);
         System.out.println("If you would like to subtract another number, enter it here, if not, press on any letter >>>");
         while (input.hasNextDouble()){
             System.out.println("If you would like to subtract another number, enter it here, if not, press on any letter >>>");
@@ -82,5 +83,31 @@ public class SimpleCalculations {
             }
         return answer;
         
+    }
+    
+    public static double division(){
+        Scanner input = new Scanner(System.in);
+        double answer = 0;
+        System.out.println("Please enter the dividend >>> ");
+        while(!input.hasNextDouble()){
+            input.nextLine();
+            System.out.println("This is an invalid input, please enter the dividend >>>");
+            }
+        answer = input.nextDouble();
+        System.out.println("Please enter the divisor  >>>");
+            while(!input.hasNextDouble()){
+            input.nextLine();
+            System.out.println("This is an invalid input, please enter the the divisor >>>");
+            }
+        double number = input.nextDouble();
+        answer /= number;
+        System.out.println(answer);
+        System.out.println("If you would like to divid another number, enter it here, if not, press on any letter >>>");
+        while (input.hasNextDouble()){
+            System.out.println("If you would like to divid another number, enter it here, if not, press on any letter >>>");
+            double num = input.nextDouble();
+            answer /= num;
+        }
+        return answer;
     }
 }//end of class
