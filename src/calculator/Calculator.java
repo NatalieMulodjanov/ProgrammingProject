@@ -111,6 +111,10 @@ public class Calculator {
                     }
                         
                 }while(option > 6);
+                break;
+            case 4 : 
+                System.out.println("Welscome to Québec Tax Calculator ");
+                System.out.println("");
         }
         
     }//end main method

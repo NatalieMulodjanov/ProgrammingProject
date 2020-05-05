@@ -14,18 +14,49 @@ import java.util.Scanner;
 public class newClass1 {
     public static void main(String[] args) {
     
-  Scanner input = new Scanner(System.in);
-        double perimeter = 0;
-        for(int i = 1; i <= 2; i++){
-            System.out.println("Please enter the " + i + " side of the parallelogram here >>>");
-            while((!input.hasNextDouble()) || (Perimeters.isPositive(input)) ){
-                input.nextLine();
-                System.out.println("This is not a valid value, please enter the side values in numbers >>>");
-            }
-            double side = input.nextDouble();
-            perimeter = perimeter + (2 * side);
-        }
-        System.out.println(perimeter);
+        System.out.println(" --------------");
+        System.out.println("|              |");
+        System.out.println("|  Rectangle   |");
+        System.out.println("|              |");
+        System.out.println(" --------------");
+        
+        System.out.println("   --------------");
+        System.out.println("  /             /");
+        System.out.println(" /Parallelogram/");
+        System.out.println("/             /");
+        System.out.println("--------------");
+       
+        System.out.println("        / \\");
+        System.out.println("       /   \\");
+        System.out.println("      /     \\");
+        System.out.println("     /       \\");
+        System.out.println("    /         \\");
+        System.out.println("   / triangle  \\");
+        System.out.println("  ---------------");
+        
+        
+        System.out.println("     ****");
+        System.out.println("  *        *");
+        System.out.println(" *  Circle  *");
+        System.out.println(" *          *");
+        System.out.println("  *        *");
+        System.out.println("     ****");
+        
+         
+        System.out.println("   ______");
+        System.out.println("  /      \\");
+        System.out.println(" /        \\");
+        System.out.println(" \\Hexagon /");
+        System.out.println("  \\      /");
+        System.out.println("   -----");
+        
+        System.out.println("   _______ ");
+        System.out.println("  /       \\");
+        System.out.println(" /         \\");
+        System.out.println("/ Trapazoid \\");
+        System.out.println("-------------");
     }
-    
+        
+   
+
 }
