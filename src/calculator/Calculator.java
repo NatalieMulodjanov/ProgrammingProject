@@ -39,7 +39,7 @@ public class Calculator {
                             "\nPress 1 for simple calculations(addition, subtraction, multiplication or division)" +
                             "\nPress 2 for the Perimeter of various shapes " + 
                             "\nPress 3 for the Area of various shapes " +
-                            "\nPress 4 for Quebec Tax calculator" + 
+                            "\nPress 4 for Tax calculator" + 
                             "\nPress 5 for Currency calculator" + 
                             "\nPress 6 for Calories Burnt Calculator" );
     
@@ -113,8 +113,121 @@ public class Calculator {
                 }while(option > 6);
                 break;
             case 4 : 
-                System.out.println("Welscome to Québec Tax Calculator ");
-                System.out.println("");
+                 do{
+                    System.out.println("Welscome to the Tax Calculator ");
+                    System.out.println("Please enter your province: " + 
+                                       "\nPress 1 for Quebec" + 
+                                       "\nPress 2 for Ontario" + 
+                                       "\nPress 3 for British Colombia" + 
+                                       "\nPress 4 for Saskatchewan" + 
+                                       "\nPress 5 for Manitoba" + 
+                                       "\nPress 6 for Alberta");
+                    option = input.nextInt();
+
+                    switch(option){
+
+                            case 1: 
+                                System.out.println("The Province Of Quebec: \n");
+                                double price = Tax.getPrice();
+                                double national = Tax.getNational();
+                                Tax.setProvincial(0.09975);
+                                double provincial = Tax.getProvincial();
+                                double tax = price * (provincial + national);
+                                double priceAfterTax = price + tax;
+
+                                System.out.println("================================");
+                                System.out.println("         SUBTOTAL:" + price + "$");
+                                System.out.println("     TPS:" + national + "   TVQ:" + provincial);
+                                System.out.println("         TOTAL:" + priceAfterTax + " $");
+                                System.out.println("         ************");
+                                System.out.println("================================");
+                                break;
+                            case 2: 
+                                System.out.println("The Province Of Ontario:\n");
+                                price = Tax.getPrice();
+                                Tax.setProvincial(0.13);
+                                provincial = Tax.getProvincial();
+                                tax = price * provincial;
+                                priceAfterTax = price + tax;
+
+                                System.out.println("================================");
+                                System.out.println("         SUBTOTAL:" + price + " $");
+                                System.out.println("         HST:" + provincial);
+                                System.out.println("         TOTAL:" + priceAfterTax + " $");
+                                System.out.println("         ************");
+                                System.out.println("================================");
+                                break;
+                            case 3:
+                                System.out.println("The Province of British Colombia: \n");
+                                price = Tax.getPrice();
+                                national = Tax.getNational();
+                                Tax.setProvincial(0.07);
+                                provincial = Tax.getProvincial();
+                                tax = price * (provincial + national);
+                                priceAfterTax = price + tax;
+
+                                System.out.println("================================");
+                                System.out.println("         SUBTOTAL:" + price + " $");
+                                System.out.println("     GST:" + national + "     PST:" + provincial);
+                                System.out.println("         TOTAL:" + priceAfterTax + " $");
+                                System.out.println("         ************");
+                                System.out.println("================================");
+                                break;
+                            case 4: 
+                                System.out.println("The Province of Saskatchewan: \n");
+                                price = Tax.getPrice();
+                                national = Tax.getNational();
+                                Tax.setProvincial(0.06);
+                                provincial = Tax.getProvincial();
+                                tax = price * (provincial + national);
+                                priceAfterTax = price + tax;
+
+                                System.out.println("================================");
+                                System.out.println("         SUBTOTAL:" + price + " $");
+                                System.out.println("     GST:" + national + "     PST:" + provincial);
+                                System.out.println("         TOTAL:" + priceAfterTax + " $");
+                                System.out.println("         ************");
+                                System.out.println("================================");
+                                break;
+                            case 5:
+                                System.out.println("The Province of Manitoba \n");
+                                price = Tax.getPrice();
+                                national = Tax.getNational();
+                                Tax.setProvincial(0.07);
+                                provincial = Tax.getProvincial();
+                                tax = price * (provincial + national);
+                                priceAfterTax = price + tax;
+
+                                System.out.println("================================");
+                                System.out.println("         SUBTOTAL:" + price + " $");
+                                System.out.println("     GST:" + national + "     PST:" + provincial);
+                                System.out.println("         TOTAL:" + priceAfterTax + " $");
+                                System.out.println("         ************");
+                                System.out.println("================================");
+                                break;
+                            case 6: 
+                                System.out.println("The Province of Alberta: \n");
+                                price = Tax.getPrice();
+                                national = Tax.getNational();
+                                tax = price * national;
+                                priceAfterTax = price + tax;
+
+                                System.out.println("================================");
+                                System.out.println("         SUBTOTAL:" + price + " $");
+                                System.out.println("            GST:" + national);    
+                                System.out.println("         TOTAL:" + priceAfterTax + " $");
+                                System.out.println("         ************");
+                                System.out.println("================================");
+                                break;
+                            default : 
+                                System.out.println("No such option");
+                                break;
+                    }   
+               
+            }while(option > 6);
+            break;
+            
+            
         }
         
     }//end main method
