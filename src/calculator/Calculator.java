@@ -131,7 +131,6 @@ public class Calculator {
                     option = input.nextInt();
 
                     switch(option){
-
                             case 1: 
                                 System.out.println("The Province Of Quebec: \n");
                                 double price = Tax.getPrice();
@@ -230,11 +229,42 @@ public class Calculator {
                                 break;
                     }   
                
-            }while(option > 6);
-            break;
-            
-            
+                }while(option > 6);
+                break;
+            case 5 :
+                do{
+                    System.out.println("Welcome to the Currency Calculator ");
+                    System.out.println("Please choose current currency " + 
+                                       "\nPress 1 for Canadian Dollar" + 
+                                       "\nPress 2 for United Stated Dollar" + 
+                                       "\nPress 3 for Euros" + 
+                                       "\nPress 4 for Israeli Shekel" + 
+                                       "\nPress 5 for Japanese Yen ");
+                    option = input.nextInt();
+
+                    switch(option){
+                        case 1:
+                            Currency.menuOfOptions1();
+                            break;
+                        case 2: 
+                            Currency.menuOfOptions2();
+                            break;
+                        case 3:
+                            Currency.menuOfOptions3();
+                            break;
+                        case 4:
+                            Currency.menuOfOptions4();;
+                            break;
+                        case 5:
+                            Currency.menuOfOptions5();
+                            break;
+                        default: 
+                            System.out.println("No such option");
+                    }
+                }while(option > 5);        
         }
+            
+        
         
     }//end main method
    
