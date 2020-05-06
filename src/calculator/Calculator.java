@@ -64,10 +64,10 @@ public class Calculator {
                             System.out.println("The difference is " + SimpleCalculations.subtraction());
                             break;
                         case 3: 
-                            System.out.println("The product is: " + SimpleCalculations.multiplication());
+                            System.out.printf("The product is: %.2f", SimpleCalculations.multiplication());
                             break;
                         case 4: 
-                            System.out.println("The qoutient is: " + SimpleCalculations.division());
+                            System.out.printf("The qoutient is: %.2f", SimpleCalculations.division());
                             break;
                         default: 
                             System.out.println("No such option");
@@ -88,22 +88,28 @@ public class Calculator {
                     
                     switch(option){
                         case 1: 
-                            System.out.println("The perimeter of the rectangle is: " + Perimeters.rectangleP() + " units");
+                            System.out.printf("The perimeter of the rectangle is:  %.2f", Perimeters.rectangleP() );
+                            System.out.print(" units");
                             break;
                         case 2 : 
-                            System.out.println("The perimeter of the parallelogram is: " + Perimeters.parallelogramP() + " units");
+                            System.out.printf("The perimeter of the parallelogram is: %.2f" + Perimeters.parallelogramP());
+                            System.out.print( " units");
                             break;
                         case 3 : 
-                            System.out.println("The perimeter of the triangle is: " + Perimeters.triangleP() + " units");
+                            System.out.printf("The perimeter of the triangle is: %.2f" + Perimeters.triangleP() );
+                            System.out.print( " units");
                             break;
                         case 4 : 
-                            System.out.println("The perimeter of the circle is: " + Perimeters.circleP() + " units");
+                            System.out.printf("The perimeter of the circle is:  %.2f", Perimeters.circleP() );
+                            System.out.print(" units");
                             break;
                         case 5 : 
-                            System.out.println("The perimeter of the hexagon is: " + Perimeters.hexagonP() + " units");
+                            System.out.printf("The perimeter of the hexagon is: %.2f" + Perimeters.hexagonP());
+                            System.out.print( " units");
                             break;
                         case 6: 
-                            System.out.println("The perimeter of the trapazoid is: " + Perimeters.trapezoidP() + " units");
+                            System.out.printf("The perimeter of the trapazoid is: %.2f" + Perimeters.trapezoidP());
+                            System.out.print( " units");
                             break;
                         default : 
                             System.out.println("No such option");
