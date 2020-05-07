@@ -13,33 +13,21 @@ import java.util.Scanner;
  */
 public class Tax {
     private static double national = 0.05;
-    private double provincial;
-    private double price;
+    private static double provincial;
     
-    Tax(double national, double provincial, double price){
-        this.national = national;
-        this.provincial = provincial;
-        this.price = price;
+    public static void setProvincial(double provin){
+        provincial = provin;
     }
     
-    Tax(double provincial, double price){
-        this.provincial = provincial;
-        this.price = provincial;
-    }
-     
-    public void setProvincial(double provincial){
-        this.provincial = provincial;
-    }
-    
-    public void setPrice(double price){
-        this.price = price;
-    }
-    
-    public double getProvincial(){
+    public static double getProvincial(){
         return provincial;
     }
     
-    public double getPrice(){
+      public static double getNational(){
+        return national;
+    }
+      
+    public static double getPrice(){
         Scanner input = new Scanner(System.in); 
         System.out.println("Please eneter the price here >>>");
         while(!input.hasNextDouble()){
@@ -49,4 +37,5 @@ public class Tax {
         double price = input.nextDouble();
         return price;
     }
-}
+    
+ }

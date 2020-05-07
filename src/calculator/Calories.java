@@ -14,36 +14,85 @@ import java.util.Scanner;
  * @author ntali
  */
 public class Calories{
-    
-    
-    public static void sleeping(){
-        double met = 0;
-        double weight = 0;
+   
+   
+    public static double getTime(){
+        int option;
+        double timeM = 0;
         Scanner input = new Scanner(System.in);
-        
-        System.out.println("Please enter the amount of hours you slept >>>");
-        while(!input.hasNextDouble()){
-            input.nextLine();
-            System.out.println("This is an invalid input please enter the amount of hours you slept in numbers >>>");
-        }
-        double durationH = input.nextDouble();
-        System.out.println("Would you like to enter your weight in Kilograms or Pounds? enter 'KG' or 'LB'");
-        String answer = input.next();
-        if(answer.equals("KG")){
-            System.out.println("Please enter your weight in kilograms here >>>");
-            weight = input.nextDouble();
-        }
-        if(answer.equals("LB")) {
-            System.out.println("Please enter your weight in pounds >>>");
-            weight = toKilograms(input.nextDouble());
-        }
-        /*while(fileMET.hasNext()){
-            met = fileMET.nextDouble();
-        }*/
-        
-        double calories = caloriesFormula(toMinutes(durationH),met ,weight );
-        
+        do{
+            System.out.println("Choose the time >>>" +
+                               "\nPress 1 for minutes" + 
+                               "\nPress 2 for hours");
+            while(!input.hasNextDouble()){
+                input.next();
+                System.out.println("Please choose a number \n");
+            }
+            option = input.nextInt();
+            switch(option){
+                case 1:
+                    System.out.println("Please enter the time of your exercise in minutes >>>");  
+                    while(!input.hasNextDouble()){
+                        input.next();
+                        System.out.println("This is an invalid input, please enter the time in numbers >>>");
+                    }
+                    timeM = input.nextDouble();
+                    break;
+                case 2:
+                    System.out.println("Please enter the time of your exercise in hours >>>");  
+                    while(!input.hasNextDouble()){
+                        input.next();
+                        System.out.println("This is an invalid input, please enter the time in numbers >>>");
+                    }
+                    double time = input.nextDouble();
+                    timeM = Calories.toMinutes(time);
+                    break;
+                default:
+                    System.out.println("No such option");
+            }
+        }while(option > 2);
+        return timeM; 
     }
+    
+    public static double getWeight(){
+        int option;
+        double weightKG = 0;
+        Scanner input = new Scanner(System.in);
+        do{
+            System.out.println("Choose the weight >>>" +
+                               "\nPress 1 for KG" + 
+                               "\nPress 2 for LBS");
+            while(!input.hasNextDouble()){
+                input.next();
+                System.out.println("Please choose a number \n");
+            }
+            option = input.nextInt();
+            switch(option){
+                case 1:
+                    System.out.println("Please enter your weight in KG >>>");
+                    while(!input.hasNextDouble()){
+                        input.next();
+                        System.out.println("This is an invalid input, please enter the weight in numbers >>>");
+                    }
+                    weightKG = input.nextDouble();
+                    break;
+                case 2:
+                    System.out.println("Please enter your weight in LBS >>>");
+                    while(!input.hasNextDouble()){
+                        input.next();
+                        System.out.println("This is an invalid input, please enter the weight in numbers >>>");
+                    }
+                    double weight = input.nextDouble();
+                    weightKG = Calories.toKilograms(weight);
+                    break;
+                default:
+                    System.out.println("No such option");
+                    break;
+            }
+        }while(option > 2);
+        return weightKG;
+    }
+    
     public static double toMinutes(double durationH){
        final int TO_MINUTES = 60; 
        double durationM = durationH * TO_MINUTES;

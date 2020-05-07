@@ -1,7 +1,0 @@
-Sleeping	1.0
-walking 	3.0
-jogging 	7.0
-jumpRope 	10.0
-calisthenicsMod 3.5
-calisthenicsInts 8.0
-chores 		4.0

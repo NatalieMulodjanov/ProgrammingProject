@@ -5,58 +5,41 @@
  */
 package calculator;
 
+
+import java.io.File;
+import java.io.FileNotFoundException;
+
+import java.io.IOException;
 import java.util.Scanner;
+
 
 /**
  *
  * @author ntali
  */
 public class newClass1 {
-    public static void main(String[] args) {
-    
-        System.out.println(" --------------");
-        System.out.println("|              |");
-        System.out.println("|  Rectangle   |");
-        System.out.println("|              |");
-        System.out.println(" --------------");
+    public static void main(String[] args) throws FileNotFoundException, IOException{
+    File metTable = new File("C:\\Users\\ntali\\Documents\\NetBeansProjects\\Calculator\\src\\calculator\\METtable.txt");
         
-        System.out.println("   --------------");
-        System.out.println("  /             /");
-        System.out.println(" /Parallelogram/");
-        System.out.println("/             /");
-        System.out.println("--------------");
-       
-        System.out.println("        / \\");
-        System.out.println("       /   \\");
-        System.out.println("      /     \\");
-        System.out.println("     /       \\");
-        System.out.println("    /         \\");
-        System.out.println("   / triangle  \\");
-        System.out.println("  ---------------");
-        
-        
-        System.out.println("     ****");
-        System.out.println("  *        *");
-        System.out.println(" *  Circle  *");
-        System.out.println(" *          *");
-        System.out.println("  *        *");
-        System.out.println("     ****");
-        
+           Scanner inputFile = new Scanner(metTable);  
          
-        System.out.println("   ______");
-        System.out.println("  /      \\");
-        System.out.println(" /        \\");
-        System.out.println(" \\Hexagon /");
-        System.out.println("  \\      /");
-        System.out.println("   -----");
+      int i = 0;
+      do{
         
-        System.out.println("   _______ ");
-        System.out.println("  /       \\");
-        System.out.println(" /         \\");
-        System.out.println("/ Trapazoid \\");
-        System.out.println("-------------");
+           i++;
+           int sleepMet = inputFile.nextInt();
+           System.out.println(sleepMet );
+           
+           
+      }while(inputFile.hasNext()); 
     }
+  
+    } 
+
+      
+                 
+    
         
    
 
-}
+

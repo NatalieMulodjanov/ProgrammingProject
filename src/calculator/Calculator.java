@@ -15,7 +15,7 @@ public class Calculator {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        
+        int option;
         
         System.out.println("**------------**"+
                            "\n|              |"+
@@ -42,8 +42,11 @@ public class Calculator {
                             "\nPress 4 for Tax calculator" + 
                             "\nPress 5 for Currency calculator" + 
                             "\nPress 6 for Calories Burnt Calculator" );
-    
-        int option = input.nextInt();
+        while(!input.hasNextDouble()){
+            input.next();
+            System.out.println("Please choose a number \n");
+        }
+        option = input.nextInt();
         
         switch(option){
             case 1:
@@ -53,7 +56,10 @@ public class Calculator {
                                        "\nPress 2 for subtraction" + 
                                        "\nPress 3 for multiplication" + 
                                        "\nPress 4 for division");
-                    
+                    while(!input.hasNextDouble()){
+                        input.next();
+                        System.out.println("Please choose a number \n");
+                    }
                     option = input.nextInt();
 
                     switch(option){
@@ -84,6 +90,10 @@ public class Calculator {
                                        "\nPress 4 for circle " + 
                                        "\nPress 5 for hexagon" + 
                                        "\nPress 6 for trapezoid");
+                    while(!input.hasNextDouble()){
+                    input.next();
+                    System.out.println("Please choose a number \n");
+                    }
                     option = input.nextInt();
                     
                     switch(option){
@@ -128,6 +138,10 @@ public class Calculator {
                                        "\nPress 4 for Saskatchewan" + 
                                        "\nPress 5 for Manitoba" + 
                                        "\nPress 6 for Alberta");
+                    while(!input.hasNextDouble()){
+                        input.next();
+                        System.out.println("Please choose a number \n");
+                    }
                     option = input.nextInt();
 
                     switch(option){
@@ -240,6 +254,10 @@ public class Calculator {
                                        "\nPress 3 for Euros" + 
                                        "\nPress 4 for Israeli Shekel" + 
                                        "\nPress 5 for Japanese Yen ");
+                    while(!input.hasNextDouble()){
+                        input.next();
+                        System.out.println("Please choose a number \n");
+                    }
                     option = input.nextInt();
 
                     switch(option){
@@ -261,7 +279,31 @@ public class Calculator {
                         default: 
                             System.out.println("No such option");
                     }
-                }while(option > 5);        
+                }while(option > 5); 
+                break;
+            case 6: 
+                System.out.println("Welcome to the Calories Burn Calculator" + 
+                                    "\nThis calculator uses MET to calculate an average calories burnt depending on exercise and time");
+                System.out.println("Please choose your excercise: " +
+                                   "\nPress 1 for jumping rope" + 
+                                   "\nPress 2 for Calisthenics (e.g. push-ups, sit-ups, pull-ups, jumping jacks)" +
+                                   "\nPress 3 for leasure bicycling " + 
+                                   "\nPress 4 for walking (3.0 mph)" + 
+                                   "\nPress 5 for sleeping");
+                while(!input.hasNextDouble()){
+                        input.next();
+                        System.out.println("Please choose a number \n");
+                }
+                option = input.nextInt();
+                switch(option){
+                    case 1: 
+                        double met = 10.0;
+                        double time = Calories.getTime();
+                        double weight = Calories.getWeight();
+                        System.out.println("The calories burnt in " + time + " minutes are: " + Calories.caloriesFormula(time, met, weight));
+                        
+                }
+                
         }
             
         
