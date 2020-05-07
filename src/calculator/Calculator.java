@@ -282,28 +282,56 @@ public class Calculator {
                 }while(option > 5); 
                 break;
             case 6: 
-                System.out.println("Welcome to the Calories Burn Calculator" + 
-                                    "\nThis calculator uses MET to calculate an average calories burnt depending on exercise and time");
-                System.out.println("Please choose your excercise: " +
-                                   "\nPress 1 for jumping rope" + 
-                                   "\nPress 2 for Calisthenics (e.g. push-ups, sit-ups, pull-ups, jumping jacks)" +
-                                   "\nPress 3 for leasure bicycling " + 
-                                   "\nPress 4 for walking (3.0 mph)" + 
-                                   "\nPress 5 for sleeping");
-                while(!input.hasNextDouble()){
-                        input.next();
-                        System.out.println("Please choose a number \n");
-                }
-                option = input.nextInt();
-                switch(option){
-                    case 1: 
-                        double met = 10.0;
-                        double time = Calories.getTime();
-                        double weight = Calories.getWeight();
-                        System.out.println("The calories burnt in " + time + " minutes are: " + Calories.caloriesFormula(time, met, weight));
-                        
-                }
-                
+                do{
+                    System.out.println("Welcome to the Calories Burn Calculator" + 
+                                        "\nThis calculator uses MET to calculate an average calories burnt depending on exercise and time");
+                    System.out.println("Please choose your excercise: " +
+                                       "\nPress 1 for jumping rope" + 
+                                       "\nPress 2 for Calisthenics (e.g. push-ups, sit-ups, pull-ups, jumping jacks)" +
+                                       "\nPress 3 for leasure bicycling " + 
+                                       "\nPress 4 for walking (3.0 mph)" + 
+                                       "\nPress 5 for sleeping");
+                    while(!input.hasNextDouble()){
+                            input.next();
+                            System.out.println("Please choose a number \n");
+                    }
+                    option = input.nextInt();
+                    switch(option){
+                        case 1: 
+                            double metJump = 10.0;
+                            double time = Calories.getTime();
+                            double weight = Calories.getWeight();
+                            System.out.println("The calories burnt in " + time + " minutes of Jumping Rope are: " + Calories.caloriesFormula(time, metJump, weight));
+                            break;
+                        case 2:
+                            double metCalis = 8.0;
+                            time = Calories.getTime();
+                            weight = Calories.getWeight();
+                            System.out.println("The calories burnt in " + time + " minutes of Calisthenics are: " + Calories.caloriesFormula(time, metCalis, weight));
+                            break;
+                        case 3:
+                            double metBicyc = 4.0;
+                            time = Calories.getTime();
+                            weight = Calories.getWeight();
+                            System.out.println("The calories burnt in " + time + " minutes of Bicycling are: " + Calories.caloriesFormula(time, metBicyc, weight));
+                            break;
+                        case 4:
+                            double metWalk = 3.3;
+                            time = Calories.getTime();
+                            weight = Calories.getWeight();
+                            System.out.println("The calories burnt in " + time + " minutes of Walking (3.0 mph) are: " + Calories.caloriesFormula(time, metWalk, weight));
+                            break;
+                        case 5: 
+                            double metSleep = 0.9;
+                            time = Calories.getTime();
+                            weight = Calories.getWeight();
+                            System.out.println("The calories burnt in " + time + " minutes of Sleeping are: " + Calories.caloriesFormula(time, metSleep, weight));
+                            break;
+                        default : 
+                            System.out.println("No such option");
+                            break;
+                    }
+                }while(option > 5);
         }
             
         
